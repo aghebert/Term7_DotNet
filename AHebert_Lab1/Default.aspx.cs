@@ -102,6 +102,16 @@ public partial class _Default : System.Web.UI.Page
     public void btn_Click(object sender, CommandEventArgs e)
     {
 
+        int num = 0;
+        if (Int32.TryParse(string e.CommandArgument, num) == true)
+        {
+            //tempstr is the current number being "typed" into the display
+            tempStr += Convert.ToString(num);
+            //outputs the newest tempStr to txtLCD.Text
+            txtLCD.Text = tempStr;
+            
+        }
+
         switch (e.CommandName)
         {
             case "1":
@@ -114,11 +124,9 @@ public partial class _Default : System.Web.UI.Page
             case "8":
             case "9":
             case "0":
-                //tempstr is the current number being "typed" into the display
-                tempStr += Convert.ToString(e.CommandArgument);
-                //outputs the newest tempStr to txtLCD.Text
-                txtLCD.Text = tempStr;
-                break;
+               
+
+
 
             case "-":
                 break;
