@@ -1,0 +1,56 @@
+﻿#header {
+    width: 100%;
+    background-color: lime;
+    text-align: center;
+}
+
+#footer {
+    width: 100%;
+    background-color: orange;
+    height: 50px;
+    right: 0;
+    left: 0;
+    bottom:0;
+    clear:both;
+    text-align: center;
+}
+
+
+#MainPage {
+    width: 100%;
+}
+
+
+#MainContent {
+    width: 80%;
+    float: left;
+
+   background-color: red;
+}
+
+#SideContent {
+    width: 20%;
+    height: auto;
+    float: right;
+
+    background-color: blue;
+}
+
+
+
+#ContactMGR {
+    width: 100%;
+}
+
+#ContactMGRheader{
+    clear:both;
+}
+
+#ContactMGRmain{
+    clear:both;
+}
+
+.app {
+    background-color: lightgray;
+
+}

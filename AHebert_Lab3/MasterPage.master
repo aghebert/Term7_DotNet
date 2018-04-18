@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href="/App_Themes/Theme1/StyleSheet.css" rel="stylesheet" runat="server" />
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <div id="MainPage" class="wrapper">
+        <div id="header">
+            <a href="Default.aspx">Home</a>&nbsp;&nbsp;&nbsp;
+                <a href="ContactUs.aspx">Contact Us</a>&nbsp;&nbsp;&nbsp;
+                <a href="AboutUs.aspx">About Us</a>&nbsp;&nbsp;&nbsp;
+                <a href="ContactMGR.aspx">Contact Manager</a>
+        </div>
+
+        <asp:ContentPlaceHolder ID="cphMainContent" runat="server">
+            <div id="MainContent">
+                This page is under construction
+            </div>
+
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="cphSideContent" runat="server">
+            <div id="SideContent">
+                Side info/ Specials /News /Info   
+            </div>
+        </asp:ContentPlaceHolder>
+
+
+         <div id="footer">
+        Footer stuff: copyright, contact, created by
+    </div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
