@@ -66,10 +66,42 @@ public partial class _Default : System.Web.UI.Page
         TextLCD.Text = TextLCD.Text + Button6.Text;
     }
 
+<<<<<<< HEAD
     protected void Button7_Click(object sender, EventArgs e)
     {
         TextLCD.Text = TextLCD.Text + Button7.Text;
     }
+=======
+        int num = 0;
+        if (Int32.TryParse(string e.CommandArgument, num) == true)
+        {
+            //tempstr is the current number being "typed" into the display
+            tempStr += Convert.ToString(num);
+            //outputs the newest tempStr to txtLCD.Text
+            txtLCD.Text = tempStr;
+            
+        }
+
+        switch (e.CommandName)
+        {
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+            case "0":
+               
+
+
+
+            case "-":
+                break;
+        }
+>>>>>>> 4e8482df42c57aa0b845fde16f0e8a5ecff12894
 
     protected void Button8_Click(object sender, EventArgs e)
     {
