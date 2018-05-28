@@ -9,50 +9,47 @@
 <body>
     <form id="form1" runat="server">
         <div style="text-align: center">
+              <p>
+                  &nbsp;</p>
+              <p>
+                  <asp:TextBox ID="TextLCD" runat="server" Height="30px" Width="278px" OnTextChanged="TextLCD_TextChanged"></asp:TextBox>
+              </p>
+              <p>
+                  <asp:TextBox ID="TextSpecial" runat="server" Width="89px"></asp:TextBox>
+              </p>
+              <p>
+                  <asp:Button ID="Button1" runat="server" Height="69px" Text="1" Width="86px" OnClick="Button1_Click" />
+                  <asp:Button ID="Button2" runat="server" Height="69px" Text="2" Width="86px" OnClick="Button2_Click" />
+                  <asp:Button ID="Button3" runat="server" Height="69px" Text="2" Width="86px" OnClick="Button3_Click" />
+                  <asp:Button ID="Div" runat="server" Height="69px" Text="/" Width="86px" OnClick="ButtonDiv_Click" />
+              </p>
+              <p>
+                  <asp:Button ID="Button4" runat="server" Height="69px" Text="4" Width="86px" OnClick="Button4_Click" />
+                  <asp:Button ID="Button5" runat="server" Height="69px" Text="5" Width="86px" OnClick="Button5_Click" />
+                  <asp:Button ID="Button6" runat="server" Height="69px" Text="6" Width="86px" OnClick="Button6_Click" />
+                  <asp:Button ID="Multi" runat="server" Height="69px" Text="X" Width="86px" OnClick="ButtonMulti_Click" />
+              </p>
+              <p>
+                  <asp:Button ID="Button7" runat="server" Height="69px" Text="7" Width="86px" OnClick="Button7_Click" />
+                  <asp:Button ID="Button8" runat="server" Height="69px" Text="8" Width="86px" OnClick="Button8_Click" />
+                  <asp:Button ID="Button9" runat="server" Height="69px" Text="9" Width="86px" OnClick="Button9_Click" />
+                  <asp:Button ID="Sub" runat="server" Height="69px" Text="-" Width="86px" OnClick="ButtonSub_Click" />
+              </p>
+    <p>
+        
+                  <asp:Button ID="Clear" runat="server" Height="69px" Text="Clear" Width="86px" OnClick="ButtonClear_Click" />
+                  <asp:Button ID="Button0" runat="server" Height="69px" Text="0" Width="86px" OnClick="Button0_Click" />
+                  <asp:Button ID="Decimal" runat="server" Height="69px" Text="." Width="86px" OnClick="ButtonDecimal_Click" Font-Bold="False" Font-Size="Larger" />
+                  <asp:Button ID="Add" runat="server" Height="69px" Text="+" Width="86px" OnClick="ButtonAdd_Click" />
+                  </p>
+              <p>
+                  <asp:Button ID="MS" runat="server" Height="69px" Text="MS" Width="86px" OnClick="ButtonMS_Click" />
+                  <asp:Button ID="MR" runat="server" Height="69px" Text="MR" Width="86px" OnClick="ButtonMR_Click" />
+                  <asp:Button ID="MC" runat="server" Height="69px" Text="MC" Width="86px" OnClick="ButtonMC_Click" />
+                  <asp:Button ID="Equals" runat="server" Height="69px" Text="=" Width="86px" OnClick="ButtonEquals_Click" />
+              </p>
+          </div>
+            </form>
 
-            <asp:TextBox ID="txtLCD" runat="server" BorderStyle="Solid" Style="text-align: right" Height="48px" Width="480px" OnTextChanged="txtLCD_TextChanged"></asp:TextBox>
-            <asp:Label ID="txtLCDlabelop" runat="server" Text=" " BorderStyle="Solid" Height="48px" Width="48px"></asp:Label>
-            <asp:Label ID="txtLCDlabelMem" runat="server" Text=" " BorderStyle="Solid" Height="48px" Width="48px"></asp:Label>
-            <br />
-            <asp:Button class="button" ID="btn1" runat="server" Text="1" CommandArgument="1" OnCommand="btn_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btn2" runat="server" Text="2" CommandArgument="2" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btn3" runat="server" Text="3" CommandArgument="3" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btnDivide" runat="server" Text="/" OnClick="btnDivide_Click" Height="100px" Width="150px" />
-
-            <br />
-
-            <asp:Button class="button" ID="btn4" runat="server" Text="4" CommandArgument="4" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btn5" runat="server" Text="5" CommandArgument="5" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btn6" runat="server" Text="6" CommandArgument="6" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btnMulti" runat="server" Text="X" OnClick="btnMulti_Click" Height="100px" Width="150px" />
-
-            <br />
-
-            <asp:Button class="button" ID="btn7" runat="server" Text="7" CommandArgument="7" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btn8" runat="server" Text="8" CommandArgument="8" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btn9" runat="server" Text="9" CommandArgument="9" OnCommand="btnNum_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btnSub" runat="server" Text="-" OnClick="btnSub_Click" Height="100px" Width="150px" />
-
-            <br />
-
-            <asp:Button class="button" ID="btn0" runat="server" Text="0" CommandArgument="0" OnCommand="btnNum_Click" Height="100px" Width="450px" />
-            <asp:Button class="button" ID="btnPlus" runat="server" Text="+" OnClick="btnPlus_Click" Height="100px" Width="150px" />
-
-            <br />
-
-            <asp:Button class="button" ID="btnEquals" runat="server" Text="=" OnClick="btnEquals_Click" Height="100px" Width="450px" />
-            <asp:Button class="button" ID="btnDec" runat="server" Text="." CommandArgument="." OnCommand="btnNum_Click" Height="100px" Width="150px" />
-
-            <br />
-
-            <asp:Button class="button" ID="btnCls" runat="server" Text="CS" OnClick="btnCls_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btnStoreMem" runat="server" Text="MS" OnClick="btnStoreMem_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btnRecallMem" runat="server" Text="MR" OnClick="btnRecallMem_Click" Height="100px" Width="150px" />
-            <asp:Button class="button" ID="btnClearMem" runat="server" Text="MC" OnClick="btnClearMem_Click" Height="100px" Width="150px" />
-
-
-
-        </div>
-    </form>
-</body>
+        </body>
 </html>

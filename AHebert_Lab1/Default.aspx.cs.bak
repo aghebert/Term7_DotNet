@@ -1,0 +1,217 @@
+﻿//Aaron Hebert
+//SE256 - 05
+//Lab 1
+//10/13/2017
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Diagnostics;
+
+public partial class _Default : System.Web.UI.Page
+{
+    //Initialize some variables 
+    double tempNum = 0;
+    double tempNum2 = 0;
+    double total = 0;
+    string tempStr = "";
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+    }
+
+    protected void txtLCD_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    //When equals is clicked checks to see what symbol is stored in txtLCDLabelop and does a math operation based on it
+    protected void btnEquals_Click(object sender, EventArgs e)
+    { 
+        //Check symbol
+        switch (txtLCDlabelop.Text)
+        {
+            case " + ":
+                //grab newest variable in txtLCD.Text and store it to tempNum
+                tempNum = Convert.ToDouble(txtLCD.Text);
+                //Create a new number based on the math operation with tempNum and TempNum2
+                total = tempNum2 + tempNum;
+                //Output the total to txtLCD.Text
+                txtLCD.Text = Convert.ToString(total);
+                break;
+            case " - ":
+                tempNum = Convert.ToDouble(txtLCD.Text);
+                total = tempNum2 - tempNum;
+                txtLCD.Text = Convert.ToString(total);
+                break;
+            case " / ":
+                tempNum = Convert.ToDouble(txtLCD.Text);
+                total = tempNum2 / tempNum;
+                txtLCD.Text = Convert.ToString(total);
+                break;
+            case " x ":
+                tempNum = Convert.ToDouble(txtLCD.Text);
+                total = tempNum2 * tempNum;
+                txtLCD.Text = Convert.ToString(total);
+                break;
+            default:
+                txtLCD.Text = "Unrecognized operation. Please Choose a correct option.";
+                break;
+        }
+
+        /*
+        //Check symbol
+        if (txtLCDlabelop.Text == " + ")
+        {
+            //grab newest variable in txtLCD.Text and store it to tempNum
+            tempNum = Convert.ToDouble(txtLCD.Text);
+            //Create a new number based on the math operation with tempNum and TempNum2
+            total = tempNum2 + tempNum;
+            //Output the total to txtLCD.Text
+            txtLCD.Text = Convert.ToString(total);
+        }
+
+        if (txtLCDlabelop.Text == " - ")
+        {
+            tempNum = Convert.ToDouble(txtLCD.Text);
+            total = tempNum2 - tempNum;
+            txtLCD.Text = Convert.ToString(total);
+        }
+
+        if (txtLCDlabelop.Text == " / ")
+        {
+            tempNum = Convert.ToDouble(txtLCD.Text);
+            total = tempNum2 / tempNum;
+            txtLCD.Text = Convert.ToString(total);
+        }
+
+        if (txtLCDlabelop.Text == " x ")
+        {
+            tempNum = Convert.ToDouble(txtLCD.Text);
+            total = tempNum2 * tempNum;
+            txtLCD.Text = Convert.ToString(total);
+        }
+        */
+    }
+
+    //gets a command argument from the aspx button on the page, and passes it through as a string, which it concatnates to tempStr
+    public void btn_Click(object sender, CommandEventArgs e)
+    {
+
+        switch (e.CommandName)
+        {
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+            case "0":
+                //tempstr is the current number being "typed" into the display
+                tempStr += Convert.ToString(e.CommandName);
+                //outputs the newest tempStr to txtLCD.Text
+                txtLCD.Text = tempStr;
+                break;
+
+            case "-":
+                break;
+        }
+
+    }
+
+        //gets a command argument from the aspx button on the page, and passes it through as a string, which it concatnates to tempStr
+        public void btnNum_Click(object sender, CommandEventArgs e)
+        {
+            //tempstr is the current number being "typed" into the display
+            tempStr += Convert.ToString(e.CommandName);
+            //outputs the newest tempStr to txtLCD.Text
+            txtLCD.Text = tempStr;
+        }
+
+
+        //Stores the current number tempNum, then puts it into tempNum2, sets the tempStr and txtLCD.Text to "" to clear the screen and current value,
+        //and sets txtLCDLabelop.Text to the current modifier being used.
+        public void btnPlus_Click(object sender, EventArgs e)
+        {
+        Session["operator"] = "PLUS";
+
+        txtLCD.Text = Session["operator"].ToString();
+
+
+        tempNum = Convert.ToDouble(tempStr);
+            tempNum2 = tempNum;
+            tempStr = "";
+            txtLCD.Text = "";
+            txtLCDlabelop.Text = " + ";
+        
+        }
+
+        protected void btnDivide_Click(object sender, EventArgs e)
+        {
+            tempNum = Convert.ToDouble(tempStr);
+            tempNum2 = tempNum;
+            tempStr = "";
+            txtLCD.Text = "";
+            txtLCDlabelop.Text = " / ";
+        }
+
+        protected void btnMulti_Click(object sender, EventArgs e)
+        {
+            tempNum = Convert.ToDouble(tempStr);
+            tempNum2 = tempNum;
+            tempStr = "";
+            txtLCD.Text = "";
+            txtLCDlabelop.Text = " x ";
+
+        }
+
+        protected void btnSub_Click(object sender, EventArgs e)
+        {
+            tempNum = Convert.ToDouble(tempStr);
+            tempNum2 = tempNum;
+            tempStr = "";
+            txtLCD.Text = "";
+            txtLCDlabelop.Text = " - ";
+
+        }
+
+        //Clears everything but txtLCDLabelMem.Text and the session variable.
+        protected void btnCls_Click(object sender, EventArgs e)
+        {
+            tempNum = 0;
+            tempNum2 = 0;
+            tempStr = "";
+            txtLCD.Text = "";
+            txtLCDlabelop.Text = "";
+        }
+
+        //Stores the current value of txtLCD.Text to a session variable
+        //Also sets the "M" in txtLCDlabelMem.Text
+        protected void btnStoreMem_Click(object sender, EventArgs e)
+        {
+            Session["storedNum"] = txtLCD.Text;
+            txtLCDlabelMem.Text = " M ";
+        }
+
+        //Recalls the current value of the session variable to txtLCD.Text
+        protected void btnRecallMem_Click(object sender, EventArgs e)
+        {
+            txtLCD.Text = Convert.ToString(Session["storedNum"]);
+        }
+
+        //Clears the current value of the session variable
+        //And clears the "M" in txtLCDlabelMem.Text
+        protected void btnClearMem_Click(object sender, EventArgs e)
+        {
+            txtLCDlabelMem.Text = "";
+            Session["storedNum"] = "";
+        }
+
+
+    }
